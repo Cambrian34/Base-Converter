@@ -14,7 +14,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+        HBox input_hor = new HBox();
         TextField input1 = new TextField();
+        Text Input = new Text("INPUT  ");
+        input_hor.getChildren().addAll(Input,input1);
         ToggleGroup from = new ToggleGroup();
         RadioButton button1 = new RadioButton("Hexadecimal / Base 16");
         RadioButton button2 = new RadioButton("Decimal / Base 10");
@@ -45,10 +48,14 @@ public class Main extends Application {
         inout.getChildren().addAll(from1,to1);
 
         Button convert = new Button("Convert ");
-        TextField Output = new TextField();
+
+        TextField output = new TextField();
+        HBox Output_hor = new HBox();
+        Text Output = new Text("OUTPUT  ");
+        Output_hor.getChildren().addAll(Output,output);
         VBox ui = new VBox();
 
-        ui.getChildren().addAll(input1,inout, convert, Output);
+        ui.getChildren().addAll(input_hor,inout, convert, Output_hor);
 
         Group root = new Group(ui);
         convert.setOnAction(e ->
