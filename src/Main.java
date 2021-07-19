@@ -1,10 +1,10 @@
 import javafx.application.Application;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -58,13 +58,39 @@ public class Main extends Application {
         ui.getChildren().addAll(input_hor,inout, convert, Output_hor);
 
         Group root = new Group(ui);
+        from.selectedToggleProperty().addListener((ov, old_toggle, new_toggle) -> {
+            if (from.getSelectedToggle() == button1) {
+
+            }
+            else if (to.getSelectedToggle() == button2){
+
+            }else if(to.getSelectedToggle() ==button3){
+
+            }else if(to.getSelectedToggle() == button4) {
+
+            }
+        });
+        to.selectedToggleProperty().addListener((ov, old_toggle, new_toggle) -> {
+            if (to.getSelectedToggle() == button5) {
+
+            }else if (to.getSelectedToggle() == button6){
+
+            }else if(to.getSelectedToggle() ==button7){
+
+            }else if(to.getSelectedToggle() == button8) {
+
+            }
+
+
+
+        });
         convert.setOnAction(e ->
         {
             String n = input1.getText();
             int m = Integer.parseInt(n);
             //Add functionality to radio buttons and use them to choose the output value here.
             String l = String.valueOf(m);
-            Output.setText(l);
+            output.setText(l);
 
         });
         Scene scene = new Scene(root,400,400);
@@ -74,5 +100,8 @@ public class Main extends Application {
     }
     public static void main(String[] args){
         launch(args);
+    }
+    public void bintodec(){
+
     }
 }
