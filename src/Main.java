@@ -102,6 +102,15 @@ public class Main extends Application {
         launch(args);
     }
     public void bintodec(){
-
+//Converts from binary to decimal
+    }
+    public void bintob2(){
+        //Converts from binary to base 2
+    }
+    public void bintob1(){
+        //Converts from binary to base 1
+    }
+    public void bintohex(){
+        //Converts from binary to hexadecimal
     }
 }
