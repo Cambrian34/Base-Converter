@@ -11,6 +11,19 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
+    // choice 1 = hex, choice 2 = decimal, choice 3 = binary,choice 4 = base 1
+    Boolean inchoice1= false;
+    Boolean inchoice2= false;
+    Boolean inchoice3= false;
+    Boolean inchoice4= false;
+
+    Boolean outchoice1= false;
+    Boolean outchoice2= false;
+    Boolean outchoice3= false;
+    Boolean outchoice4= false;
+    int m,k;
+
     @Override
     public void start(Stage primaryStage) {
 
@@ -60,36 +73,40 @@ public class Main extends Application {
         Group root = new Group(ui);
         from.selectedToggleProperty().addListener((ov, old_toggle, new_toggle) -> {
             if (from.getSelectedToggle() == button1) {
+                inchoice1 = true;
 
             }
             else if (to.getSelectedToggle() == button2){
+                inchoice2 = true;
 
             }else if(to.getSelectedToggle() ==button3){
+                inchoice3 = true;
 
             }else if(to.getSelectedToggle() == button4) {
-
+                inchoice4 = true;
             }
         });
         to.selectedToggleProperty().addListener((ov, old_toggle, new_toggle) -> {
             if (to.getSelectedToggle() == button5) {
+                outchoice1 = true;
 
             }else if (to.getSelectedToggle() == button6){
+                outchoice2 = true;
 
             }else if(to.getSelectedToggle() ==button7){
+                outchoice3 = true;
 
             }else if(to.getSelectedToggle() == button8) {
+                outchoice4 = true;
 
             }
-
-
-
         });
         convert.setOnAction(e ->
         {
             String n = input1.getText();
-            int m = Integer.parseInt(n);
+            m = Integer.parseInt(n);
             //Add functionality to radio buttons and use them to choose the output value here.
-            String l = String.valueOf(m);
+            String l = String.valueOf(k);
             output.setText(l);
 
         });
@@ -101,11 +118,12 @@ public class Main extends Application {
     public static void main(String[] args){
         launch(args);
     }
-    public void bintodec(){
+    public void bintodec() {
 //Converts from binary to decimal
+        k = Integer.parseInt(String.valueOf(m), 2);
     }
     public void bintob2(){
-        //Converts from binary to base 2
+        //Converts from binary to binary
     }
     public void bintob1(){
         //Converts from binary to base 1
