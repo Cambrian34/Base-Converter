@@ -1,10 +1,10 @@
 import javafx.application.Application;
-
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -23,6 +23,7 @@ public class Main extends Application {
     Boolean outchoice3= false;
     Boolean outchoice4= false;
     int m,k;
+    String g, out;
 
     @Override
     public void start(Stage primaryStage) {
@@ -104,6 +105,7 @@ public class Main extends Application {
         convert.setOnAction(e ->
         {
             String n = input1.getText();
+            g = n;
             m = Integer.parseInt(n);
             //Add functionality to radio buttons and use them to choose the output value here.
             String l = String.valueOf(k);
@@ -120,8 +122,21 @@ public class Main extends Application {
     }
     public void bintodec() {
 //Converts from binary to decimal
-        k = Integer.parseInt(String.valueOf(m), 2);
+        k = Integer.parseInt(g, 2);
     }
+    public void dectobin(){
+        // Converts from decimal to binary
+        out = (Integer.toBinaryString(m));
+    }
+    public void hextodec(){
+        // Converts from hex to decimal
+        k = Integer.parseInt(g,16);
+    }
+    public void dectohex(){
+        // Converts from decimal to hex
+        out = Integer.toHexString(m);
+    }
+
     public void bintob2(){
         //Converts from binary to binary
     }
