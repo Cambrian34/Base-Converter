@@ -77,13 +77,13 @@ public class Main extends Application {
                 inchoice1 = true;
 
             }
-            else if (to.getSelectedToggle() == button2){
+            else if (from.getSelectedToggle() == button2){
                 inchoice2 = true;
 
-            }else if(to.getSelectedToggle() ==button3){
+            }else if(from.getSelectedToggle() ==button3){
                 inchoice3 = true;
 
-            }else if(to.getSelectedToggle() == button4) {
+            }else if(from.getSelectedToggle() == button4) {
                 inchoice4 = true;
             }
         });
@@ -106,8 +106,36 @@ public class Main extends Application {
         {
             String n = input1.getText();
             g = n;
-            m = Integer.parseInt(n);
+            //m = Integer.parseInt(n);
             //Add functionality to radio buttons and use them to choose the output value here.
+            //Add if else
+            //inchoice4 = false;inchoice3 = false;inchoice2 = false;inchoice1 = false;
+
+            if (inchoice1 == true && inchoice2 == false && inchoice3 == false && inchoice4 == false ){
+                System.out.println("1");
+                inchoice1 = false;
+
+            }
+            else if (inchoice2 == true){
+
+                System.out.println("2");
+                inchoice2 = false;
+            }
+            else if (inchoice3 == true){
+                System.out.println("3");
+                inchoice3 = false;
+
+            }
+            else if (inchoice4 == true){
+
+                inchoice4 = false;
+                System.out.println("4");
+            }else {
+                System.out.println("needs tuning");
+            }
+
+
+
             String l = String.valueOf(k);
             output.setText(l);
 
