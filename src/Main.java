@@ -24,6 +24,14 @@ public class Main extends Application {
     Boolean outchoice4= false;
     int m,k;
     String g, out;
+    static RadioButton button1;
+    static RadioButton button2;
+    static RadioButton button3;
+    static RadioButton button4;
+    static RadioButton button5;
+    static RadioButton button6;
+    static RadioButton button7;
+    static RadioButton button8;
 
     @Override
     public void start(Stage primaryStage) {
@@ -33,10 +41,10 @@ public class Main extends Application {
         Text Input = new Text("INPUT  ");
         input_hor.getChildren().addAll(Input,input1);
         ToggleGroup from = new ToggleGroup();
-        RadioButton button1 = new RadioButton("Hexadecimal / Base 16");
-        RadioButton button2 = new RadioButton("Decimal / Base 10");
-        RadioButton button3 = new RadioButton("Binary / Base 2");
-        RadioButton button4 = new RadioButton("Base 1");
+        button1 = new RadioButton("Hexadecimal / Base 16");
+        button2 = new RadioButton("Decimal / Base 10");
+        button3 = new RadioButton("Binary / Base 2");
+        button4 = new RadioButton("Base 1");
         button1.setToggleGroup(from);
         button2.setToggleGroup(from);
         button3.setToggleGroup(from);
@@ -46,10 +54,10 @@ public class Main extends Application {
         from1.getChildren().addAll(lfrom,button1,button2,button3,button4);
 
         ToggleGroup to = new ToggleGroup();
-        RadioButton button5 = new RadioButton("Hexadecimal / Base 16");
-        RadioButton button6 = new RadioButton("Decimal / Base 10");
-        RadioButton button7 = new RadioButton("Binary / Base 2");
-        RadioButton button8 = new RadioButton("Base 1");
+        button5 = new RadioButton("Hexadecimal / Base 16");
+        button6 = new RadioButton("Decimal / Base 10");
+        button7 = new RadioButton("Binary / Base 2");
+        button8 = new RadioButton("Base 1");
         button5.setToggleGroup(to);
         button6.setToggleGroup(to);
         button7.setToggleGroup(to);
@@ -107,10 +115,15 @@ public class Main extends Application {
             String n = input1.getText();
             g = n;
             //m = Integer.parseInt(n);
-            //Add functionality to radio buttons and use them to choose the output value here.
-            //Add if else
-            //inchoice4 = false;inchoice3 = false;inchoice2 = false;inchoice1 = false;
+            // thread to remove radiobuton selection.
+            t thread = new t(10);
 
+            Thread hr = new Thread(thread);
+            hr.start();
+
+            //Add functionality to radio buttons and use them to choose the output value here.
+
+            // if else "from"
             if (inchoice1 == true && inchoice2 == false && inchoice3 == false && inchoice4 == false ){
                 System.out.println("1");
                 inchoice1 = false;
@@ -133,6 +146,29 @@ public class Main extends Application {
             }else {
                 System.out.println("needs tuning");
             }
+            // if else  "to"
+            if (outchoice1 == true && outchoice2 == false && outchoice3 == false && outchoice4 == false ){
+                System.out.println("1");
+                outchoice1 = false;
+
+            }
+            else if (outchoice2 == true){
+
+                System.out.println("2");
+                outchoice2 = false;
+            }
+            else if (outchoice3 == true){
+                System.out.println("3");
+                outchoice3 = false;
+
+            }
+            else if (outchoice4 == true){
+
+                outchoice4 = false;
+                System.out.println("4");
+            }else {
+                System.out.println("needs tuning");
+            }
 
 
 
@@ -140,10 +176,21 @@ public class Main extends Application {
             output.setText(l);
 
         });
-        Scene scene = new Scene(root,400,400);
+        Scene scene = new Scene(root,600,400);
         primaryStage.setScene(scene);
         primaryStage.setTitle("");
         primaryStage.show();
+    }
+    public void clearselection(){
+
+        button1.setSelected(false);
+        button2.setSelected(false);
+        button3.setSelected(false);
+        button4.setSelected(false);
+        button5.setSelected(false);
+        button6.setSelected(false);
+        button7.setSelected(false);
+        button8.setSelected(false);
     }
     public static void main(String[] args){
         launch(args);
@@ -173,5 +220,24 @@ public class Main extends Application {
     }
     public void bintohex(){
         //Converts from binary to hexadecimal
+    }
+}
+class t implements Runnable {
+
+    private int var;
+
+    public t(int var) {
+        this.var = var;
+    }
+
+    public void run() {
+        Main.button1.setSelected(false);
+        Main.button2.setSelected(false);
+        Main.button3.setSelected(false);
+        Main.button4.setSelected(false);
+        Main.button5.setSelected(false);
+        Main.button6.setSelected(false);
+        Main.button7.setSelected(false);
+        Main.button8.setSelected(false);
     }
 }
