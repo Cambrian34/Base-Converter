@@ -32,6 +32,19 @@ public class Main extends Application {
     static RadioButton button6;
     static RadioButton button7;
     static RadioButton button8;
+    Boolean combo0;
+    Boolean combo1;
+    Boolean combo2;
+    Boolean combo3;
+
+    Boolean choice1 = false;
+    Boolean choice2 = false;
+    Boolean choice3 = false;
+    Boolean choice4 = false;
+    Boolean choice5 = false;
+    Boolean choice6 = false;
+    Boolean choice7 = false;
+    Boolean choice8 = false;
 
     @Override
     public void start(Stage primaryStage) {
@@ -126,9 +139,10 @@ public class Main extends Application {
             if (inchoice1 == true && inchoice2 == false && inchoice3 == false && inchoice4 == false) {
                 System.out.println("1");
                 inchoice1 = false;
+                choice1 = true;
 
             } else if (inchoice2 == true) {
-
+                choice2 = true;
                 System.out.println("2");
                 inchoice2 = false;
             } else if (inchoice3 == true) {
@@ -136,7 +150,7 @@ public class Main extends Application {
                 inchoice3 = false;
 
             } else if (inchoice4 == true) {
-
+                choice4 = true;
                 inchoice4 = false;
                 System.out.println("4");
             } else {
@@ -144,21 +158,23 @@ public class Main extends Application {
             }
             // if else  "to"
             if (outchoice1 == true && outchoice2 == false && outchoice3 == false && outchoice4 == false) {
-                System.out.println("1");
+                System.out.println("5");
+                choice5 = true;
                 outchoice1 = false;
 
             } else if (outchoice2 == true) {
-
-                System.out.println("2");
+                choice6 = true;
+                System.out.println("6");
                 outchoice2 = false;
             } else if (outchoice3 == true) {
-                System.out.println("3");
+                choice7 = true;
+                System.out.println("7");
                 outchoice3 = false;
 
             } else if (outchoice4 == true) {
-
+                choice8 = true;
                 outchoice4 = false;
-                System.out.println("4");
+                System.out.println("8");
             } else {
                 System.out.println("needs tuning");
             }
