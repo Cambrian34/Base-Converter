@@ -36,6 +36,19 @@ public class Main extends Application {
     Boolean combo1;
     Boolean combo2;
     Boolean combo3;
+    Boolean combo4;
+    Boolean combo5;
+    Boolean combo6;
+    Boolean combo7;
+    Boolean combo8;
+    Boolean combo9;
+    Boolean combo10;
+    Boolean combo11;
+    Boolean combo12;
+    Boolean combo13;
+    Boolean combo14;
+    Boolean combo15;
+    Boolean combo16;
 
     Boolean choice1 = false;
     Boolean choice2 = false;
@@ -177,6 +190,96 @@ public class Main extends Application {
                 System.out.println("8");
             } else {
                 System.out.println("needs tuning");
+            }
+
+            if(choice1 ==true && choice5 == true){
+                System.out.println("Combo1: Hex to hex");
+                combo1=true;
+                choice1 = false;
+                choice5 = false;
+            }else if(choice1 == true && choice6 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo2 = true;
+                choice1 = false;
+                choice6 = false;
+            }else if(choice1 == true && choice7 ==true){
+                System.out.println("Combo1: Hex to Binary");
+                combo3 = true;
+                choice1 = false;
+                choice7 = false;
+            }else if(choice1 == true && choice8 ==true){
+                System.out.println("Combo1: Hex to Base1");
+                combo4=true;
+                choice1 = false;
+                choice8 = false;
+            }
+            else if(choice2 == true && choice5 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo5=true;
+                choice2 = false;
+                choice5 = false;
+            }else if(choice2 == true && choice6 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo6=true;
+                choice2 = false;
+                choice6 = false;
+            }
+            else if(choice2 == true && choice7 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo7=true;
+                choice2 = false;
+                choice7 = false;
+            }else if(choice2 == true && choice8 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo8=true;
+                choice2 = false;
+                choice8 = false;
+            }
+            else if(choice3 == true && choice5 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo9=true;
+                choice3 = false;
+                choice5 = false;
+            }
+            else if(choice3 == true && choice6 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo10=true;
+                choice3 = false;
+                choice6 = false;
+            }
+            else if(choice3 == true && choice7 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo11=true;
+                choice3 = false;
+                choice7 = false;
+            }
+            else if(choice3 == true && choice8 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo12=true;
+                choice3 = false;
+                choice8 = false;
+            }else if(choice4 == true && choice5 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo13=true;
+                choice4 = false;
+                choice5 = false;
+            }else if(choice4 == true && choice6 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo14=true;
+                choice4 = false;
+                choice6 = false;
+            }
+            else if(choice4 == true && choice7 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo15=true;
+                choice4 = false;
+                choice7 = false;
+            }
+            else if(choice4 == true && choice8 ==true){
+                System.out.println("Combo1: Hex to Decimal");
+                combo16=true;
+                choice4 = false;
+                choice8 = false;
             }
 
 
