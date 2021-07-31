@@ -32,23 +32,22 @@ public class Main extends Application {
     static RadioButton button6;
     static RadioButton button7;
     static RadioButton button8;
-    Boolean combo0;
-    Boolean combo1;
-    Boolean combo2;
-    Boolean combo3;
-    Boolean combo4;
-    Boolean combo5;
-    Boolean combo6;
-    Boolean combo7;
-    Boolean combo8;
-    Boolean combo9;
-    Boolean combo10;
-    Boolean combo11;
-    Boolean combo12;
-    Boolean combo13;
-    Boolean combo14;
-    Boolean combo15;
-    Boolean combo16;
+    Boolean combo1;// hex to hex
+    Boolean combo2;// hex to decimal
+    Boolean combo3;//hex to binary
+    Boolean combo4;//hex to base 1
+    Boolean combo5;// decimal to hex
+    Boolean combo6;// decimal to decimal
+    Boolean combo7;// decimal to binary
+    Boolean combo8;// decimal to base1
+    Boolean combo9;//binary to hex
+    Boolean combo10;//binary to decimal
+    Boolean combo11;// binary to binary
+    Boolean combo12;// binary to base1
+    Boolean combo13;// base 1 to hex
+    Boolean combo14;// base1 to decimal
+    Boolean combo15;// base1 to binary
+    Boolean combo16;// base1 to base1
 
     Boolean choice1 = false;
     Boolean choice2 = false;
@@ -141,7 +140,7 @@ public class Main extends Application {
             g = n;
             //m = Integer.parseInt(n);
             // thread to remove radiobuton selection.
-            t thread = new t(10);
+            t thread = new t();
 
             Thread hr = new Thread(thread);
             hr.start();
@@ -149,20 +148,20 @@ public class Main extends Application {
             //Add functionality to radio buttons and use them to choose the output value here.
 
             // if else "from"
-            if (inchoice1 == true && inchoice2 == false && inchoice3 == false && inchoice4 == false) {
+            if (inchoice1 && !inchoice2 && !inchoice3 && !inchoice4) {
                 System.out.println("1");
                 inchoice1 = false;
                 choice1 = true;
 
-            } else if (inchoice2 == true) {
+            } else if (inchoice2) {
                 choice2 = true;
                 System.out.println("2");
                 inchoice2 = false;
-            } else if (inchoice3 == true) {
+            } else if (inchoice3) {
                 System.out.println("3");
                 inchoice3 = false;
 
-            } else if (inchoice4 == true) {
+            } else if (inchoice4) {
                 choice4 = true;
                 inchoice4 = false;
                 System.out.println("4");
@@ -170,21 +169,21 @@ public class Main extends Application {
                 System.out.println("needs tuning");
             }
             // if else  "to"
-            if (outchoice1 == true && outchoice2 == false && outchoice3 == false && outchoice4 == false) {
+            if (outchoice1 && !outchoice2 && !outchoice3 && !outchoice4) {
                 System.out.println("5");
                 choice5 = true;
                 outchoice1 = false;
 
-            } else if (outchoice2 == true) {
+            } else if (outchoice2) {
                 choice6 = true;
                 System.out.println("6");
                 outchoice2 = false;
-            } else if (outchoice3 == true) {
+            } else if (outchoice3) {
                 choice7 = true;
                 System.out.println("7");
                 outchoice3 = false;
 
-            } else if (outchoice4 == true) {
+            } else if (outchoice4) {
                 choice8 = true;
                 outchoice4 = false;
                 System.out.println("8");
@@ -192,91 +191,99 @@ public class Main extends Application {
                 System.out.println("needs tuning");
             }
 
-            if(choice1 ==true && choice5 == true){
+            if(choice1 && choice5){
                 System.out.println("Combo1: Hex to hex");
                 combo1=true;
                 choice1 = false;
                 choice5 = false;
-            }else if(choice1 == true && choice6 ==true){
+            }else if(choice1 && choice6){
                 System.out.println("Combo1: Hex to Decimal");
+                hextodec();
                 combo2 = true;
                 choice1 = false;
                 choice6 = false;
-            }else if(choice1 == true && choice7 ==true){
+            }else if(choice1 && choice7){
                 System.out.println("Combo1: Hex to Binary");
                 combo3 = true;
                 choice1 = false;
                 choice7 = false;
-            }else if(choice1 == true && choice8 ==true){
+            }else if(choice1 && choice8){
                 System.out.println("Combo1: Hex to Base1");
                 combo4=true;
                 choice1 = false;
                 choice8 = false;
             }
-            else if(choice2 == true && choice5 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            else if(choice2 && choice5){
+                System.out.println("Combo1: Decimal to Hex");
+                dectohex();
                 combo5=true;
                 choice2 = false;
                 choice5 = false;
-            }else if(choice2 == true && choice6 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            }else if(choice2 && choice6){
+                System.out.println("Combo1: Decimal  to decimal");
                 combo6=true;
                 choice2 = false;
                 choice6 = false;
             }
-            else if(choice2 == true && choice7 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            else if(choice2 && choice7){
+                System.out.println("Combo1: Decimal to binary");
+                dectobin();
                 combo7=true;
                 choice2 = false;
                 choice7 = false;
-            }else if(choice2 == true && choice8 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            }else if(choice2 && choice8){
+                System.out.println("Combo1: Decimal to base 1");
                 combo8=true;
                 choice2 = false;
                 choice8 = false;
             }
-            else if(choice3 == true && choice5 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            else if(choice3 && choice5){
+                System.out.println("Combo1: Binary to Hex");
+                bintohex();
                 combo9=true;
                 choice3 = false;
                 choice5 = false;
             }
-            else if(choice3 == true && choice6 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            else if(choice3 && choice6){
+                System.out.println("Combo1: Binary to decimal");
+                bintodec();
                 combo10=true;
                 choice3 = false;
                 choice6 = false;
             }
-            else if(choice3 == true && choice7 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            else if(choice3 && choice7){
+                System.out.println("Combo1: Binary to binary");
+                bintob2();
                 combo11=true;
                 choice3 = false;
                 choice7 = false;
             }
-            else if(choice3 == true && choice8 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            else if(choice3 && choice8){
+                System.out.println("Combo1: Binary to base 1");
+                bintob1();
                 combo12=true;
                 choice3 = false;
                 choice8 = false;
-            }else if(choice4 == true && choice5 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            }else if(choice4 && choice5){
+                System.out.println("Combo1: Base1 to hex");
+
                 combo13=true;
                 choice4 = false;
                 choice5 = false;
-            }else if(choice4 == true && choice6 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            }else if(choice4 && choice6){
+                System.out.println("Combo14: Base1 to decimal");
                 combo14=true;
                 choice4 = false;
                 choice6 = false;
             }
-            else if(choice4 == true && choice7 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            else if(choice4 && choice7){
+                System.out.println("Combo1: Base1 to binary");
                 combo15=true;
                 choice4 = false;
                 choice7 = false;
             }
-            else if(choice4 == true && choice8 ==true){
-                System.out.println("Combo1: Hex to Decimal");
+            else if(choice4 && choice8){
+                System.out.println("Combo1: base1 to base1");
                 combo16=true;
                 choice4 = false;
                 choice8 = false;
@@ -293,38 +300,30 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public void clearselection() {
-
-        button1.setSelected(false);
-        button2.setSelected(false);
-        button3.setSelected(false);
-        button4.setSelected(false);
-        button5.setSelected(false);
-        button6.setSelected(false);
-        button7.setSelected(false);
-        button8.setSelected(false);
-    }
-
     public static void main(String[] args) {
         launch(args);
     }
 
     public void bintodec() {
-//Converts from binary to decimal
+    //Converts from binary to decimal
+        combo10 = false;
         k = Integer.parseInt(g, 2);
     }
 
     public void dectobin() {
+        combo7 = false;
         // Converts from decimal to binary
         out = (Integer.toBinaryString(m));
     }
 
     public void hextodec() {
+        combo2 = false;
         // Converts from hex to decimal
         k = Integer.parseInt(g, 16);
     }
 
     public void dectohex() {
+        combo5 = false;
         // Converts from decimal to hex
         out = Integer.toHexString(m);
     }
@@ -344,7 +343,7 @@ public class Main extends Application {
 
 class t implements Runnable {
 
-    public t(int var) {
+    public t() {
     }
 
     public void run() {
