@@ -196,6 +196,7 @@ public class Main extends Application {
                 combo1=true;
                 choice1 = false;
                 choice5 = false;
+                hextohex();
             }else if(choice1 && choice6){
                 System.out.println("Combo1: Hex to Decimal");
                 hextodec();
@@ -207,11 +208,13 @@ public class Main extends Application {
                 combo3 = true;
                 choice1 = false;
                 choice7 = false;
+                hextobin();
             }else if(choice1 && choice8){
                 System.out.println("Combo1: Hex to Base1");
                 combo4=true;
                 choice1 = false;
                 choice8 = false;
+                hextob1();
             }
             else if(choice2 && choice5){
                 System.out.println("Combo1: Decimal to Hex");
@@ -219,11 +222,13 @@ public class Main extends Application {
                 combo5=true;
                 choice2 = false;
                 choice5 = false;
+                dectohex();
             }else if(choice2 && choice6){
                 System.out.println("Combo1: Decimal  to decimal");
                 combo6=true;
                 choice2 = false;
                 choice6 = false;
+                dectodec();
             }
             else if(choice2 && choice7){
                 System.out.println("Combo1: Decimal to binary");
@@ -236,6 +241,7 @@ public class Main extends Application {
                 combo8=true;
                 choice2 = false;
                 choice8 = false;
+                dectob1();
             }
             else if(choice3 && choice5){
                 System.out.println("Combo1: Binary to Hex");
@@ -243,6 +249,7 @@ public class Main extends Application {
                 combo9=true;
                 choice3 = false;
                 choice5 = false;
+                bintohex();
             }
             else if(choice3 && choice6){
                 System.out.println("Combo1: Binary to decimal");
@@ -266,27 +273,30 @@ public class Main extends Application {
                 choice8 = false;
             }else if(choice4 && choice5){
                 System.out.println("Combo1: Base1 to hex");
-
                 combo13=true;
                 choice4 = false;
                 choice5 = false;
+                b1tohex();
             }else if(choice4 && choice6){
                 System.out.println("Combo14: Base1 to decimal");
                 combo14=true;
                 choice4 = false;
                 choice6 = false;
+                b1todec();
             }
             else if(choice4 && choice7){
                 System.out.println("Combo1: Base1 to binary");
                 combo15=true;
                 choice4 = false;
                 choice7 = false;
+                b1tobin();
             }
             else if(choice4 && choice8){
                 System.out.println("Combo1: base1 to base1");
                 combo16=true;
                 choice4 = false;
                 choice8 = false;
+                b1tob1();
             }
 
 
@@ -320,6 +330,7 @@ public class Main extends Application {
         combo2 = false;
         // Converts from hex to decimal
         k = Integer.parseInt(g, 16);
+        out = String.valueOf(k);
     }
 
     public void dectohex() {
@@ -330,14 +341,55 @@ public class Main extends Application {
 
     public void bintob2() {
         //Converts from binary to binary
+        combo11 = false;
+
+
     }
 
     public void bintob1() {
         //Converts from binary to base 1
+        combo12 = false;
     }
 
     public void bintohex() {
         //Converts from binary to hexadecimal
+        combo9 = false;
+    }
+    public void hextohex(){
+        //converts from to hex to hex
+        combo1 =false;
+    }
+    public void hextobin(){
+        //converts from hex to binary
+        combo3 = false;
+    }
+    public void dectodec(){
+        //converts from decimal to decimal
+        combo6 = false;
+    }
+    public void dectob1(){
+        //converts from decimal to base 1
+        combo8 = false;
+    }
+    public void b1tohex(){
+        //converts from base1 to hexadecimal
+        combo13 = false;
+    }
+    public void b1todec(){
+        // converts from base1 to decimal
+        combo14 = false;
+    }
+    public void b1tobin(){
+        //converts from base 1 to binary
+        combo15 = false;
+    }
+    public void b1tob1(){
+        //converts from base1 to base1
+        combo16 = false;
+    }
+    public void hextob1(){
+        //converts from hex to base 1
+        combo4 = false;
     }
 }
 
