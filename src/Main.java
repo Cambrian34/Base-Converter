@@ -136,9 +136,10 @@ public class Main extends Application {
         });
         convert.setOnAction(e ->
         {
+            output.setText("");
             String n = input1.getText();
             g = n;
-            //m = Integer.parseInt(n);
+            m = Integer.parseInt(n);
             // thread to remove radiobuton selection.
             t thread = new t();
 
@@ -301,7 +302,8 @@ public class Main extends Application {
 
 
             String l = String.valueOf(k);
-            output.setText(l);
+            String ouy= out;
+            output.setText(ouy);
 
         });
         Scene scene = new Scene(root, 600, 400);
@@ -317,7 +319,7 @@ public class Main extends Application {
     public void bintodec() {
     //Converts from binary to decimal
         combo10 = false;
-        k = Integer.parseInt(g, 2);
+        out = String.valueOf(Integer.parseInt(g, 2));
     }
 
     public void dectobin() {
@@ -342,54 +344,65 @@ public class Main extends Application {
     public void bintob2() {
         //Converts from binary to binary
         combo11 = false;
-
+        out = String.valueOf(m);
 
     }
 
     public void bintob1() {
         //Converts from binary to base 1
         combo12 = false;
+        out = String.valueOf(m);
     }
 
     public void bintohex() {
         //Converts from binary to hexadecimal
         combo9 = false;
+        out = String.valueOf(m);
     }
     public void hextohex(){
         //converts from to hex to hex
         combo1 =false;
+        out = String.valueOf(m);
     }
     public void hextobin(){
         //converts from hex to binary
         combo3 = false;
+        out = String.valueOf(m);
     }
     public void dectodec(){
         //converts from decimal to decimal
         combo6 = false;
+        out = String.valueOf(m);
     }
     public void dectob1(){
         //converts from decimal to base 1
         combo8 = false;
+        out = String.valueOf(m);
     }
     public void b1tohex(){
         //converts from base1 to hexadecimal
         combo13 = false;
+        out = String.valueOf(m);
     }
     public void b1todec(){
         // converts from base1 to decimal
         combo14 = false;
+        out = String.valueOf(m);
     }
     public void b1tobin(){
         //converts from base 1 to binary
         combo15 = false;
+        out = String.valueOf(m);
     }
     public void b1tob1(){
         //converts from base1 to base1
         combo16 = false;
+        out = String.valueOf(m);
     }
     public void hextob1(){
         //converts from hex to base 1
         combo4 = false;
+        out = String.valueOf(m);
     }
 }
 
