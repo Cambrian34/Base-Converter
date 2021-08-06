@@ -215,7 +215,7 @@ public class Main extends Application {
                 combo4=true;
                 choice1 = false;
                 choice8 = false;
-                hextob1();
+                hextooct();
             }
             else if(choice2 && choice5){
                 System.out.println("Combo1: Decimal to Hex");
@@ -242,7 +242,7 @@ public class Main extends Application {
                 combo8=true;
                 choice2 = false;
                 choice8 = false;
-                dectob1();
+                dectooct();
             }
             else if(choice3 && choice5){
                 System.out.println("Combo1: Binary to Hex");
@@ -268,7 +268,7 @@ public class Main extends Application {
             }
             else if(choice3 && choice8){
                 System.out.println("Combo1: Binary to base 1");
-                bintob1();
+                bintooct();
                 combo12=true;
                 choice3 = false;
                 choice8 = false;
@@ -277,27 +277,27 @@ public class Main extends Application {
                 combo13=true;
                 choice4 = false;
                 choice5 = false;
-                b1tohex();
+                octtohex();
             }else if(choice4 && choice6){
                 System.out.println("Combo14: Base1 to decimal");
                 combo14=true;
                 choice4 = false;
                 choice6 = false;
-                b1todec();
+                octtodec();
             }
             else if(choice4 && choice7){
                 System.out.println("Combo1: Base1 to binary");
                 combo15=true;
                 choice4 = false;
                 choice7 = false;
-                b1tobin();
+                octtobin();
             }
             else if(choice4 && choice8){
                 System.out.println("Combo1: base1 to base1");
                 combo16=true;
                 choice4 = false;
                 choice8 = false;
-                b1tob1();
+                octtooct();
             }
 
 
@@ -348,8 +348,8 @@ public class Main extends Application {
 
     }
 
-    public void bintob1() {
-        //Converts from binary to base 1
+    public void bintooct() {
+        //Converts from binary to octal
         combo12 = false;
         out = String.valueOf(m);
     }
@@ -374,33 +374,33 @@ public class Main extends Application {
         combo6 = false;
         out = String.valueOf(m);
     }
-    public void dectob1(){
-        //converts from decimal to base 1
+    public void dectooct(){
+        //converts from decimal to octal
         combo8 = false;
         out = String.valueOf(m);
     }
-    public void b1tohex(){
-        //converts from base1 to hexadecimal
+    public void octtohex(){
+        //converts from octal to hexadecimal
         combo13 = false;
         out = String.valueOf(m);
     }
-    public void b1todec(){
-        // converts from base1 to decimal
+    public void octtodec(){
+        // converts from octal to decimal
         combo14 = false;
         out = String.valueOf(m);
     }
-    public void b1tobin(){
-        //converts from base 1 to binary
+    public void octtobin(){
+        //converts from octal to binary
         combo15 = false;
         out = String.valueOf(m);
     }
-    public void b1tob1(){
-        //converts from base1 to base1
+    public void octtooct(){
+        //converts from octal to octal
         combo16 = false;
         out = String.valueOf(m);
     }
-    public void hextob1(){
-        //converts from hex to base 1
+    public void hextooct(){
+        //converts from hex to octal
         combo4 = false;
         out = String.valueOf(m);
     }
