@@ -69,7 +69,7 @@ public class Main extends Application {
         button1 = new RadioButton("Hexadecimal / Base 16");
         button2 = new RadioButton("Decimal / Base 10");
         button3 = new RadioButton("Binary / Base 2");
-        button4 = new RadioButton("Base 1");
+        button4 = new RadioButton("Octal/Base 8");
         button1.setToggleGroup(from);
         button2.setToggleGroup(from);
         button3.setToggleGroup(from);
@@ -82,7 +82,7 @@ public class Main extends Application {
         button5 = new RadioButton("Hexadecimal / Base 16");
         button6 = new RadioButton("Decimal / Base 10");
         button7 = new RadioButton("Binary / Base 2");
-        button8 = new RadioButton("Base 1");
+        button8 = new RadioButton("Octal/Base 8");
         button5.setToggleGroup(to);
         button6.setToggleGroup(to);
         button7.setToggleGroup(to);
@@ -138,8 +138,13 @@ public class Main extends Application {
         {
             output.setText("");
             String n = input1.getText();
-            g = n;
-            m = Integer.parseInt(n);
+            g= n;
+            try{
+            m = Integer.parseInt(n);}
+            catch (Exception e1){
+                g = n;
+
+            }
             // thread to remove radiobuton selection.
             t thread = new t();
 
@@ -211,7 +216,7 @@ public class Main extends Application {
                 choice7 = false;
                 hextobin();
             }else if(choice1 && choice8){
-                System.out.println("Combo1: Hex to Base1");
+                System.out.println("Combo1: Hex to Octal");
                 combo4=true;
                 choice1 = false;
                 choice8 = false;
@@ -401,8 +406,18 @@ public class Main extends Application {
     }
     public void hextooct(){
         //converts from hex to octal
+        String digits = "0123456789ABCDEF";
+        g = g.toUpperCase();
+        int val = 0;
+        for (int i = 0; i < g.length(); i++)
+        {
+            char c = g.charAt(i);
+            int d = digits.indexOf(c);
+            val = 16*val + d;
+        }
+
         combo4 = false;
-        out = String.valueOf(m);
+        out = String.valueOf(val);
     }
 }
 
